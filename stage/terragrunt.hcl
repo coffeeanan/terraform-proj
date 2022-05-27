@@ -6,7 +6,6 @@ remote_state {
   }
   config = {
     bucket = "tf-state-somoto-ire"
-
     key = "${path_relative_to_include()}/terraform.tfstate"
     region         = "eu-west-1"
     encrypt        = true
