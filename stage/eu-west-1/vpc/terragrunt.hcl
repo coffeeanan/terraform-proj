@@ -4,16 +4,6 @@ include "root" {
   path = find_in_parent_folders()
 }
 
-# Indicate where to source the terraform module from.
-# The URL used here is a shorthand for
-# "tfr://registry.terraform.io/terraform-aws-modules/vpc/aws?version=3.5.0".
-# Note the extra `/` after the protocol is required for the shorthand
-# notation.
-# #######################################################
-terraform {
-  source = "tfr:///terraform-aws-modules/vpc/aws?version=3.5.0"
-}
-
 # Indicate what region to deploy the resources into
 # #######################################################
 # generate "provider" {
@@ -25,6 +15,25 @@ terraform {
 # }
 # EOF
 # }
+
+# Indicate where to source the terraform module from.
+# The URL used here is a shorthand for
+# "tfr://registry.terraform.io/terraform-aws-modules/vpc/aws?version=3.5.0".
+# Note the extra `/` after the protocol is required for the shorthand
+# notation.
+# #######################################################
+terraform {
+  source = "tfr:///terraform-aws-modules/vpc/aws?version=3.5.0"
+
+  extra_arguments "common_vars" {
+    commands = get_terraform_commands_that_need_vars()
+
+    arguments = [
+      # "-var-file=../../common.tfvars",
+      # "-var-file=../region.tfvars"
+    ]
+  }
+}
 
 # Indicate the input values to use for the variables of the module.
 # #######################################################
