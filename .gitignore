@@ -1,0 +1,63 @@
+# Local .terraform directories
+**/.terraform/*
+.terraform/*
+.terraform
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+terraform.tfstate
+terraform.tfstate.backup*
+*.tf.swp
+
+# PyCharm and InteliJ fixes
+**/.idea/*
+*.iml
+
+# directory - VisualStudio fix
+**/.directory/*
+.directory
+
+# Ansible .retry
+*.retry
+
+
+ami_hardening_pb
+# Python Virtual env
+**/.venv/*
+
+# Lambda packages
+lam_pack.zip
+infrastructure/payworksdev/eu-west-1/jungle/aws/lambda/auto_boot/TF_conf/tests/*
+infrastructure/payworks/us-east-1/serverless/aws/lambda/*.zip
+
+# Parsing tools
+tools/tf_exporter_parser/sg.tf
+tools/tf_exporter_parser/sg_parsed.json
+tools/tf_exporter_parser/security_groups.tf
+tools/tf_exporter_parser/security_groups_rules.tf
+**/.venv/*
+
+# Ignore SWP files
+*.swp
+*.swo
+**/*.swp
+**/*.swo
+
+# Ignore terraform target plans
+*.plan
+
+# Ignore source variables with secrets
+source.env
+
+out
+
+*.deb
+*.jar
+**/*.zip
+
+lambda.zip
+# vault password
+provisioning/ansible/group_vars/all/vault.yaml
+.terraform.lock.hcl
+.terragrunt-cache
