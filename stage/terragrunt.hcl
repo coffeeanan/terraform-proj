@@ -13,3 +13,16 @@ remote_state {
     dynamodb_table = "tf-state-locks"
   }
 }
+
+generate "provider" {
+  path = "provider.tf"
+  if_exists = "overwrite_terragrunt"
+  contents = <<EOF
+provider "aws" {
+  region = "eu-west-1"
+  assume_role {
+    role_arn = "arn:aws:iam::612239922950:role/terragrunt"
+  }
+}
+EOF
+}
