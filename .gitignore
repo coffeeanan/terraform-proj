@@ -61,3 +61,5 @@ lambda.zip
 provisioning/ansible/group_vars/all/vault.yaml
 .terraform.lock.hcl
 .terragrunt-cache
+
+backend.tf
